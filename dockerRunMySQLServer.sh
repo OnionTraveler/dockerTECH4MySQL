@@ -9,3 +9,17 @@
  [ `docker ps -a | grep 'mysqlerver' | rev | cut -d ' ' -f 1 | rev` ] && echo "The container 「mysqlerver」 has existed" || docker run -itd --name mysqlerver --hostname mysqlerver -p 3306:3306 --network=MySQL4onion oniontraveler/mysql_container:19.5.27
 
 
+
+#========================= (port explanation)
+# -p 「實體主機host」:「容器container」
+# -p 3306:3306  -> MySQL
+
+
+#========================= (docker commands for entering into the container(master or slaver1))
+# docker exec -it mysqlerver /bin/bash
+
+
+#========================= (docker commands for remove all containers)
+# docker stop mysqlerver
+# docker rm mysqlerver
+
